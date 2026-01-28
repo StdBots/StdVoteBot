@@ -1,3 +1,5 @@
+import asyncio
+import signal
 from pyrogram import Client
 from config import API_ID, API_HASH, BOT_TOKEN
 from core.logger import setup_logger
@@ -13,5 +15,25 @@ import handlers.stats
 import handlers.cancel
 import handlers.admin
 
-print("Bot Started")
-app.run()
+
+async def main():
+    await app.start()
+    print("StdVoteBot Started 🚀")
+    await idle()
+    await app.stop()
+
+
+async def idle():
+    stop = asyncio.Event()
+
+    def signal_handler(*_):
+        stop.set()
+
+    signal.signal(signal.SIGTERM, signal_handler)
+    signal.signal(signal.SIGINT, signal_handler)
+
+    await stop.wait()
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
