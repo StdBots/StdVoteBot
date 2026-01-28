@@ -1,0 +1,2 @@
+user_states = {}
+SETTING_CHANNEL = "SETTING_CHANNEL"
