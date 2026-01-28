@@ -1,0 +1,20 @@
+{
+  "name": "StdVoteBot",
+  "description": "Advanced Telegram Voting Bot built with Pyrogram",
+  "repository": "https://github.com/StdBots/StdVoteBot",
+  "keywords": ["telegram", "bot", "pyrogram", "voting"],
+  "env": {
+    "API_ID": {
+      "description": "Telegram API ID",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Telegram API HASH",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Bot Token from BotFather",
+      "required": true
+    }
+  }
+}
