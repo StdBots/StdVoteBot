@@ -6,12 +6,7 @@ setup_logger()
 
 app = Client("StdVoteBot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
-import handlers.start
-import handlers.vote
-import handlers.callbacks
-import handlers.stats
-import handlers.cancel
-import handlers.admin
+from handlers import start, vote, callbacks, stats, cancel, admin
 
-print("StdVoteBot Running 🔥")
+print("Bot Started")
 app.run()
