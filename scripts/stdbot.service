@@ -1,0 +1,16 @@
+[Unit]
+Description=StdVoteBot - Telegram Voting Bot Daemon
+After=network.target mongodb.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/stdbots/StdVoteBot
+ExecStart=/opt/stdbots/StdVoteBot/bin/bot
+Restart=always
+RestartSec=5
+EnvironmentFile=/opt/stdbots/StdVoteBot/.env
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
